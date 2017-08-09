@@ -1,0 +1,33 @@
+
+
+//fromusername,tousername,createtime,msgtype,content
+create database ordermeal;
+create table user
+(
+fromusername varchar(80) primary key not null,
+tousername varchar(60),
+createtime integer,
+msgtype varchar(30),
+content varchar(30)
+)engine=InnoDB;
+
+
+create table userimage
+(
+picurl varchar(255) primary key not null,
+fromusername varchar(80),
+tousername varchar(60),
+createtime integer,
+msgtype varchar(30),
+mediaid varchar(255)
+)engine=InnoDB;
+
+create table userbutton
+(
+fromusername varchar(80) primary key not null,
+tousername varchar(60),
+createtime integer,
+msgtype varchar(30),
+event varchar(20),
+eventkey varchar(10)
+)engine=InnoDB;

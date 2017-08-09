@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!-- XML 配置文件包含对 MyBatis 系统的核心设置 -->
+<configuration>
+	<properties 
+	resource="db.properties">
+	</properties>
+	<!-- 指定 MyBatis 所用日志的具体实现 -->
+	<environments default="mysql">
+		<!-- 环境配置，即连接的数据库。 -->
+		<environment id="mysql">
+			<!-- 指定事务管理类型，type="JDBC"指直接简单使用了JDBC的提交和回滚设置 -->
+			<transactionManager type="JDBC" />
+			<!-- dataSource指数据源配置，POOLED是JDBC连接对象的数据源连接池的实现。 -->
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<!-- private static String url = "jdbc:mysql://localhost:3306/sky?useSSL=false"; -->
+				<property name="url"
+					value="jdbc:mysql://127.0.0.1:3306/ordermeal?useSSL=false" />
+				<property name="username" value="root" />
+				<property name="password" value="513721x" />
+			</dataSource>
+		</environment>
+		<!-- -->
+	</environments>
+	<!-- mappers告诉了MyBatis去哪里找持久化类的映射文件 -->
+	<mappers>
+		<mapper resource="com/sky/mapper/UserMapper.xml" />
+		<mapper resource="com/sky/mapper/UserImageMapper.xml"/>
+		
+	</mappers>
+</configuration>
