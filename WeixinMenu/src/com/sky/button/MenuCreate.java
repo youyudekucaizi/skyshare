@@ -11,8 +11,8 @@ public class MenuCreate
 
 	public static void main(String[] args)
 	{
-		String appId = "wx26234ebbfc61d838";
-		String appsecret = "2fac9581bd801c4736b28ff8c6071ff6";
+		String appId = "";
+		String appsecret = "";
 		AccessToken accessToken = HttpsUtil.getAccessToken(appId, appsecret);
 
 		// if (null != accessToken)
